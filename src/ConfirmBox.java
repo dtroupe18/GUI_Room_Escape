@@ -41,6 +41,7 @@ public class ConfirmBox {
         VBox layout = new VBox(10);
         layout.getChildren().addAll(label, yesButton, noButton);
         layout.setAlignment(Pos.CENTER);
+        layout.setStyle("-fx-background-color: red");
 
         Scene scene = new Scene(layout);
         window.setScene(scene);
