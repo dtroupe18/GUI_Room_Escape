@@ -13,8 +13,8 @@ import javafx.stage.Stage;
 
 public class GUI_Room_Escape extends Application {
 
-    Stage window;
-    Scene scene1, scene2, scene3, fail, win;
+    private Stage window;
+    private Scene scene1, scene2, scene3, fail, win;
 
     public static void main(String[] args) {
         launch(args);
@@ -44,7 +44,7 @@ public class GUI_Room_Escape extends Application {
 
 
             quitButton.setOnAction(e -> {
-                boolean quit = ConfirmBox.display("Quit", "Are you sure you want to quit?");
+                boolean quit = ConfirmBox.display();
                 if (quit) {
                     window.close();
                 }

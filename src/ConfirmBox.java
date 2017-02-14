@@ -10,18 +10,18 @@ import javafx.geometry.*;
 
 public class ConfirmBox {
 
-    static boolean answer;
+    private static boolean answer;
 
-    public static boolean display(String title, String message) {
+    public static boolean display() {
         Stage window = new Stage();
 
         // user can only interact with alert box window
         window.initModality(Modality.APPLICATION_MODAL);
-        window.setTitle(title);
+        window.setTitle("Quit");
         window.setMaxWidth(250);
 
         Label label = new Label();
-        label.setText(message);
+        label.setText("Are you sure you want to quit?");
 
         // create two buttons
         Button yesButton = new Button("Yes");

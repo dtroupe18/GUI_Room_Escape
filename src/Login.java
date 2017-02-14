@@ -2,7 +2,6 @@
  * Created by Dave on 2/14/17.
  */
 
-import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
