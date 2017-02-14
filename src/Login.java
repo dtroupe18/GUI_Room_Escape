@@ -37,9 +37,9 @@ public class Login {
         hb.setPadding(new Insets(20, 20, 20, 30));
 
         GridPane gp = new GridPane();
-        gp.setPadding(new Insets(20, 20, 20, 20));
-        gp.setHgap(5);
-        gp.setVgap(5);
+        gp.setPadding(new Insets(40, 40, 40, 40));
+        gp.setHgap(10);
+        gp.setVgap(10);
 
         Label username = new Label("Username");
         final TextField usernameText = new TextField();
@@ -60,32 +60,43 @@ public class Login {
 
         // Reflection for GP
         Reflection reflection = new Reflection();
-        reflection.setFraction(0.7f);
+        reflection.setFraction(0.1f);
         gp.setEffect(reflection);
 
         //Drop Shadow
         DropShadow dropShadow = new DropShadow();
-        dropShadow.setOffsetX(5);
-        dropShadow.setOffsetY(5);
+        dropShadow.setOffsetX(1);
+        dropShadow.setOffsetY(1);
         Text text = new Text("Login");
-        text.setFont(Font.font("Courier New", FontWeight.BOLD, 28));
+        text.setFont(Font.font("Courier New", FontWeight.THIN, 28));
         text.setEffect(dropShadow);
 
         hb.getChildren().add(text);
 
         loginButton.setOnAction(e -> {
             if (usernameText.getText().equals(user) && passwordText.getText().equals(pw)) {
-                message.setText("You are logged in");
-                message.setTextFill(Color.AQUA);
+                // message.setText("You are logged in");
+                // message.setTextFill(Color.AQUA);
                 loggedIn = true;
                 loginWindow.close();
 
             }
 
-            else {
-                message.setText("Incorrect username or password");
+            else if (usernameText.getText().equals(user)){
+                message.setText("Incorrect password");
                 message.setTextFill(Color.RED);
                 loggedIn = false;
+                usernameText.setText("");
+                passwordText.setText("");
+            }
+
+            else {
+                message.setText("Incorrect username");
+                message.setTextFill(Color.RED);
+                loggedIn = false;
+                usernameText.setText("");
+                passwordText.setText("");
+
             }
         });
 
